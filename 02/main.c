@@ -1,19 +1,28 @@
 #include <stdio.h>
+#include <string.h>
 
 // void ft_strcpy(char *dest, char *src);
-char *ft_strncpy(char *dest, char *src, unsigned int n);
+// char *ft_strncpy(char *dest, char *src, unsigned int n);
+// char *ft_strlowcase(char *str);
+// unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
+// int ft_strlen(char *str);
+int		ft_putstr_non_printable(char *str);
+void    ft_putchar(char c);
 
 
 
 int main(void) {
 
 
-    char *str1 = "789456";
-    char *str2 = "123456789 10 11 12";
-    int i = 0;
+
+    char	*t = {"YOUR_D\nICK_ SO_\nBIG"};
+    ft_putstr_non_printable(t);
 
 
-    printf("%s", ft_strncpy(str1, str2, 5));
+
+    // printf("%d\n", ft_strlcpy(buf, t, 9));
+    // // printf("%d", strlcpy(buf, t, 10));
+    // printf("%s", buf);
     // while (str1[i]) {    
     //     i++;
     // }
