@@ -2,7 +2,7 @@
 
 int ft_strlen(char *str);
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size) {
+int ft_strlcpy(char *dest, char *src, int size) {
 
     int i = 0;
 

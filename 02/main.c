@@ -6,17 +6,21 @@
 // char *ft_strlowcase(char *str);
 // unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 // int ft_strlen(char *str);
-int		ft_putstr_non_printable(char *str);
-void    ft_putchar(char c);
+// int		ft_putstr_non_printable(char *str);
+// void    ft_putchar(char c);
+void ft_print_memory(char *str);
 
 
 
 int main(void) {
 
 
+    char	*t = {"Bonjour les aminches\t\n\tc  est fou.tout.ce qu on peut faire avec\t\n\tprint_memory\n\n..lol.lol.  "};
+    
+    ft_print_memory(t);
 
-    char	*t = {"YOUR_D\nICK_ SO_\nBIG"};
-    ft_putstr_non_printable(t);
+    // ft_putstr_non_printable(126 + '}');	/* Отправляем нужную нам строку в функцию для печати и проверки отображения нечитаемых символов *
+    return (0);	
 
 
 
