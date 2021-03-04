@@ -8,16 +8,16 @@
 // int ft_strlen(char *str);
 // int		ft_putstr_non_printable(char *str);
 // void    ft_putchar(char c);
-void ft_print_memory(char *str);
+void ft_print_memory(char *str, int size);
 
 
 
 int main(void) {
 
 
-    char	*t = {"Bonjour les aminches\t\n\tc  est fou.tout.ce qu on peut faire avec\t\n\tprint_memory\n\n..lol.lol.  "};
+    char	*t = {"Bonjour les aminches\t\n\tc  est fou.tout.ce qu on peut faire avec\t\n\tprint_memory\n\n\n\tlol.lol.  "};
     
-    ft_print_memory(t);
+    ft_print_memory(t, 16);
 
     // ft_putstr_non_printable(126 + '}');	/* Отправляем нужную нам строку в функцию для печати и проверки отображения нечитаемых символов *
     return (0);	

@@ -2,6 +2,7 @@
 
 void ft_putchar(char c);
 int ft_strlcpy(char *dest, char *src, int size);
+void ft_putstr(char *str);
 
 
 void     dec_to_hex(char ch) {
@@ -28,9 +29,9 @@ void     dec_to_hex(char ch) {
  }
 
 
-int split_str(char *dest, char *str, int j) {
+int split_str(char *dest, char *str, int j, int size) {
     int i = 0;
-    while (str[j] && i < 16) {
+    while (str[j] && i < size) {
         dest[i] = str[j];
         i++;
         j++;
@@ -39,36 +40,64 @@ int split_str(char *dest, char *str, int j) {
     return (j);
 }
 
+void	ft_print_address(int nbr, char *hex)
+{
+	int		add[9];											
+	int 	i;
+	int		j;
+	int 	base_type;
+
+	i = 0;
+	j = 8; 
+	base_type = 16;
+	if(nbr == 0)
+	{
+		while(j-- > 0)
+			ft_putchar('0');
+	}
+	else
+	{
+		while (nbr)
+		{
+			add[i] = nbr % base_type;
+			nbr /= base_type;
+			i++;
+		}
+		j = (8 - i);
+		while(j-- > 0)
+			ft_putchar('0');
+		while (i > 0)
+			ft_putchar(hex[add[--i]]);
+	}
+}
 
 
-void ft_print_memory(char *str){
+
+void ft_print_memory(char *str, int size){
 
     int size_line = 0;
     int i = 0;
-    char buf[16];
+    char buf[size];
     int j = 0;
-
-        
+ 
     while (str[j]){
-        j = split_str(buf, str, j);
+        ft_print_address(j, "0123456789abcdef");
+        j = split_str(buf, str, j, size);
         while (buf[i]) {
-            if (buf[i] >= 32 && buf[i] <= 126) {
                 print_space_and_dots(size_line);
                 dec_to_hex(buf[i]);
                 size_line++;
-            }
-            else {
-                print_space_and_dots(size_line);
-                dec_to_hex(buf[i]);
-                size_line++;
-            }
-            if (size_line == 16){
-                ft_putchar('\n');
+            if (size_line == size)
                 size_line = 0;
-            }
             i++;
         }
-    i = 0;
+        i = 0;
+        ft_putchar(' ');
+        while (buf[i]) {
+            (buf[i] >= 32 && buf[i] <= 126) ? ft_putchar(buf[i]) : ft_putchar('.');
+            i++;
+        }
+        ft_putchar('\n');
+        i = 0;
     }
-
 }
