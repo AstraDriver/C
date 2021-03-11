@@ -36,7 +36,7 @@ int main(void) {
     // printf("%d\n", ft_atoi(" 100a1"));
     // printf("%d", atoi(" 100a1"));
     // ft_putnbr_base(10, "a");
-    printf("%d", ft_atoi_base("  ++A", "0123456789ABCDEF"));
+    printf("%d", ft_atoi_base("  ++ A", "0123456789ABCDEF"));
 
     
     
