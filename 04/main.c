@@ -13,7 +13,8 @@
 // char *ft_strstr(char *str, char *to_find);
 // char *ft_strlcat(char *dest, char *src, unsigned int size);
 // int ft_atoi(char *str);
-int		ft_putnbr_base(int nbr, char *base);
+// int		ft_putnbr_base(int nbr, char *base);
+int		ft_atoi_base(char *str, char *base);
 
 int main(void) {
     // ft_putchar('s');
@@ -34,7 +35,8 @@ int main(void) {
     // buf[i] = '\0';
     // printf("%d\n", ft_atoi(" 100a1"));
     // printf("%d", atoi(" 100a1"));
-    ft_putnbr_base(10, "a");
+    // ft_putnbr_base(10, "a");
+    printf("%d", ft_atoi_base("  --567", "01234567"));
 
     
     

@@ -9,7 +9,6 @@ int ft_strlen(char *str){
         i++;
     }
     return (i);
-
 }
 
 int ft_strstr(char *str, char to_find) {
@@ -40,11 +39,9 @@ int ft_base_is_valid(char *base){
     int i = 0;
 
     while (base[i]){
-        if (base[i] == '+' || base[i] == '-' || !base[i + 1])
+        if (base[i] < 32 || base[i] > 126 || base[i] == '+' || base[i] == '-'))
             return 1;
-        if (!(base[i] >= 32 || base[i] <= 126))
-            return 1;
-        if (ft_strstr(&base[i + 1], base[i]))
+        if (ft_strstr(&base[i + 1], base[i]) || !base[i + 1])                         // Переделать
             return 1;    
         i++;
     }
@@ -54,8 +51,7 @@ int ft_base_is_valid(char *base){
 
 void		ft_putnbr_base(int nbr, char *base) {
 
-    if (ft_base_is_valid)
+    if (ft_base_is_valid(base))
         return;
     ft_putnbr(nbr, base);
-
 }
