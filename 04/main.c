@@ -34,7 +34,7 @@ int main(void) {
     // buf[i] = '\0';
     // printf("%d\n", ft_atoi(" 100a1"));
     // printf("%d", atoi(" 100a1"));
-    printf("%d", ft_putnbr_base(10, "  "));
+    ft_putnbr_base(10, "a");
 
     
     
