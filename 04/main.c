@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 
 // void ft_is_negative(int i);
 // void ft_putchar(char c);
@@ -11,7 +12,8 @@
 // char* ft_strncat(char *dest, char *src, unsigned int nb);
 // char *ft_strstr(char *str, char *to_find);
 // char *ft_strlcat(char *dest, char *src, unsigned int size);
-int ft_atoi(char *str);
+// int ft_atoi(char *str);
+int		ft_putnbr_base(int nbr, char *base);
 
 int main(void) {
     // ft_putchar('s');
@@ -30,9 +32,10 @@ int main(void) {
     //     buf[i++] = '0';
     // }
     // buf[i] = '\0';
-    printf("%s", ft_atoi("1234567"));
+    // printf("%d\n", ft_atoi(" 100a1"));
+    // printf("%d", atoi(" 100a1"));
+    printf("%d", ft_putnbr_base(10, "  "));
 
-    // printf("%s", ft_strstr("Эта программа написана в Linux Ubuntu", "Linux"));
     
     
     
