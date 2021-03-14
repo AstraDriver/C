@@ -9,13 +9,3 @@ char *ft_strlowcase(char *str) {
         i++; 
     }
     return (str);
-
-    // char *str = st;
-
-    // while (*str) {
-    //     if (*str >= 'A' && *str <= 'Z') 
-    //         *str += 'a' - 'A';
-    //     str++; 
-    // }
-    // return (st);
-}
