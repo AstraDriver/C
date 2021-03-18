@@ -9,6 +9,7 @@ char	*ft_strjoin(int size, char **strs, char *sep) {
     int len_str = 0;
     int i = 0;
     char *buf;
+    
 
     while (strs[i])
         len_str += ft_strlen(strs[i++] + ft_strlen(sep));

@@ -1,19 +1,53 @@
 
-vpath %.c srcs
-vpath %.h includes
-SRCS := $(wildcard *.c)
-HEADERS = ft.h
 
-OBJS = ${SRCS:.c=.o}
+NAME := libft.a
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -c
+SRC_DIR := ./srcs/
+SRC_FILES := ft_putchar.c \
+			ft_putnbr.c \
+			ft_putstr.c \
+			ft_strcat.c \
+			ft_strcmp.c \
+			ft_strcpy.c \
+			ft_strdup.c \
+			ft_strjoin.c \
+			ft_strlen.c \
+			ft_strlowcase.c \
+			ft_strstr.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
+SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJS = $(addprefix $(SRC_DIR), $(OBJ_FILES))
+HEADER := -I includes/
+LIBC := ar rc
+LIBR := ranlib
+RM := rm -f
 
-all: create_lib
+all: obj $(NAME)
 
-create_lib: ${OBJS}
-		gcc -o -Wall -Werror -Wextra ${OBJS}
-		ar rc libft.a ${OBJS}
+obj: $(SRCS)
 
-${OBJS}: ${SRCS}
-		gcc -c -Wall -Werror -Wextra ${SRCS}
+$(SRC_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) $< -o $@ $(HEADER)
+
+$(NAME): $(OBJS)
+	$(LIBC) $(NAME) $(OBJS)
+	$(LIBR) $(NAME)
 
 clean:
-	rm -rf create_lib
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
+
+
+
+
+
+
+
+
