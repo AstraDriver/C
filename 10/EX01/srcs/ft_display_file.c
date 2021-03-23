@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "ft.h"
 
-int BUF_SIZE = 256;
+int BUF_SIZE = 29999;
 
 void ft_display_file(int argc, char *file) {
 
@@ -11,8 +11,6 @@ char buf[BUF_SIZE];
 int fd;
     if (argc == 1)
         ft_putstr("File name missing.");
-    else if (argc > 2)
-        ft_putstr("Too many arguments.");
     else {
         if ((fd = open(file, O_RDONLY)) == -1) {
             ft_putstr("OPEN(): An file open error occurred. No such file or directory.\n");
@@ -25,6 +23,4 @@ int fd;
     }
     if (close(fd) == -1)
         ft_putstr("CLOSE(): An file stream close error occurred.\n");
-    else
-        ft_putchar('\n');
 }

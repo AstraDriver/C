@@ -9,10 +9,10 @@ void ft_display_file(int argc, char *file) {
 
 char buf[BUF_SIZE];
 int fd;
-    if (argc == 1)
-        ft_putstr("File name missing.");
+    if (argc < 2)
+        ft_putstr("File name missing.\n");
     else if (argc > 2)
-        ft_putstr("Too many arguments.");
+        ft_putstr("Too many arguments.\n");
     else {
         if ((fd = open(file, O_RDONLY)) == -1) {
             ft_putstr("OPEN(): An file open error occurred. No such file or directory.\n");
@@ -20,11 +20,11 @@ int fd;
         } else if (read(fd, buf, BUF_SIZE) == -1) {
             ft_putstr("READ(): A file read error has occurred. Check file permissions.\n");
             exit(1);
-        } else
+        } else {
             ft_putstr(buf);
+            ft_putchar('\n');    
+        }
     }
     if (close(fd) == -1)
         ft_putstr("CLOSE(): An file stream close error occurred.\n");
-    else
-        ft_putchar('\n');
 }

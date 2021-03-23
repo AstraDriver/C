@@ -1,5 +1,5 @@
 
-NAME = ft_display_file
+NAME = ft_cat
 LIB := libft.a
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -c
@@ -16,6 +16,7 @@ SRC_FILES := ft_putchar.c \
 			ft_strlowcase.c \
 			ft_strstr.c \
 			ft_display_file.c \
+			ft_write_files.c \
 			main.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))

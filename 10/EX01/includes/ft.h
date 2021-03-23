@@ -15,8 +15,7 @@ int ft_strlen(char *str);
 char *ft_strlowcase(char *str);
 char *ft_strstr(char *str, char *to_find);
 void ft_display_file(int argc, char *file);
-
-
+void ft_write_files(int argc, char **file, char *dest_file);
 
 
 
